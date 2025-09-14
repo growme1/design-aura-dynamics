@@ -10,6 +10,7 @@ All colors MUST be HSL for proper theming.
   :root {
     /* Light theme - Professional Agency Colors */
     --background: 0 0% 100%;
+    --background-rgb: 255, 255, 255;
     --foreground: 215 25% 15%;
 
     --card: 0 0% 100%;
@@ -69,7 +70,8 @@ All colors MUST be HSL for proper theming.
 
   .dark {
     /* Dark theme - Professional Agency Colors */
-    --background: 215 30% 8%;
+    --background: 222 84% 4%;
+    --background-rgb: 9, 9, 23;
     --foreground: 215 20% 95%;
 
     --card: 215 25% 10%;

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Code, Palette, Smartphone, Search, Zap, Globe } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { AnimatedGradientBackground } from "@/components/background/AnimatedGradientBackground";
 
 const services = [
   {
@@ -44,10 +45,10 @@ const services = [
 export function Services() {
   return (
     <section id="services" className="py-20 lg:py-28 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0 bg-gradient-to-b from-background to-muted/20" />
+      {/* Animated Background */}
+      <AnimatedGradientBackground variant="muted" intensity="low" />
       
-      {/* Animated Background Particles */}
+      {/* Additional Animated Particles */}
       <div className="absolute inset-0 overflow-hidden">
         <motion.div
           className="absolute top-10 left-10 w-40 h-40 bg-primary/5 rounded-full blur-2xl"

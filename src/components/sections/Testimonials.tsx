@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { AnimatedGradientBackground } from "@/components/background/AnimatedGradientBackground";
 
 const testimonials = [
   {
@@ -56,6 +57,8 @@ const testimonials = [
 export function Testimonials() {
   return (
     <section className="py-20 lg:py-28 relative overflow-hidden">
+      {/* Animated Background */}
+      <AnimatedGradientBackground variant="accent" intensity="low" />
       {/* Background Elements */}
       <div className="absolute inset-0">
         <motion.div

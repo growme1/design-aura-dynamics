@@ -1,12 +1,20 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { AnimatedHeroBackground } from "@/components/background/AnimatedHeroBackground";
+import { CodeRainBackground } from "@/components/background/CodeRainBackground";
 
 export function Hero() {
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-background via-background to-muted/30" />
+      {/* Animated 3D Background */}
+      <AnimatedHeroBackground />
+      
+      {/* Code Rain Effect (subtle) */}
+      <CodeRainBackground intensity="low" />
+      
+      {/* Background Gradient Overlay */}
+      <div className="absolute inset-0 bg-gradient-to-br from-background/80 via-background/60 to-background/80 backdrop-blur-[1px]" />
       
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
