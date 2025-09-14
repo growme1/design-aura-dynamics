@@ -10,11 +10,14 @@ export function Hero() {
       
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
+        {/* Large floating orbs */}
         <motion.div
           className="absolute top-1/4 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl"
           animate={{
             scale: [1, 1.2, 1],
             opacity: [0.3, 0.5, 0.3],
+            x: [0, 50, 0],
+            y: [0, -30, 0],
           }}
           transition={{
             duration: 8,
@@ -27,6 +30,8 @@ export function Hero() {
           animate={{
             scale: [1.2, 1, 1.2],
             opacity: [0.2, 0.4, 0.2],
+            x: [0, -40, 0],
+            y: [0, 40, 0],
           }}
           transition={{
             duration: 10,
@@ -34,6 +39,70 @@ export function Hero() {
             repeatType: "reverse",
           }}
         />
+        
+        {/* Smaller floating particles */}
+        <motion.div
+          className="absolute top-1/3 right-1/3 w-32 h-32 bg-primary/5 rounded-full blur-2xl"
+          animate={{
+            scale: [0.8, 1.1, 0.8],
+            opacity: [0.1, 0.3, 0.1],
+            rotate: [0, 180, 360],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
+        <motion.div
+          className="absolute bottom-1/3 left-1/3 w-48 h-48 bg-accent/8 rounded-full blur-2xl"
+          animate={{
+            scale: [1.1, 0.9, 1.1],
+            opacity: [0.2, 0.4, 0.2],
+            rotate: [360, 180, 0],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
+        
+        {/* Gradient mesh overlay */}
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5"
+          animate={{
+            opacity: [0.3, 0.6, 0.3],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            repeatType: "reverse",
+          }}
+        />
+        
+        {/* Moving dots pattern */}
+        <div className="absolute inset-0">
+          {[...Array(20)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-1 h-1 bg-primary/20 rounded-full"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+              animate={{
+                y: [0, -100, 0],
+                opacity: [0, 1, 0],
+              }}
+              transition={{
+                duration: 3 + Math.random() * 2,
+                repeat: Infinity,
+                delay: Math.random() * 2,
+              }}
+            />
+          ))}
+        </div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

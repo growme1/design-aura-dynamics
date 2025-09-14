@@ -56,8 +56,78 @@ export function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-20 lg:py-28 bg-muted/20">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section id="contact" className="py-20 lg:py-28 bg-muted/20 relative overflow-hidden">
+      {/* Background Animation */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div
+          className="absolute top-1/4 right-1/4 w-80 h-80 bg-primary/8 rounded-full blur-3xl"
+          animate={{
+            scale: [1, 1.2, 1],
+            opacity: [0.2, 0.4, 0.2],
+            x: [0, -50, 0],
+            y: [0, 50, 0],
+          }}
+          transition={{
+            duration: 12,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        <motion.div
+          className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-accent/8 rounded-full blur-2xl"
+          animate={{
+            scale: [1.1, 0.9, 1.1],
+            opacity: [0.3, 0.5, 0.3],
+            x: [0, 60, 0],
+            y: [0, -40, 0],
+          }}
+          transition={{
+            duration: 10,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        />
+        
+        {/* Circuit-like connecting lines */}
+        <motion.div
+          className="absolute inset-0"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+        >
+          <svg className="w-full h-full">
+            <motion.path
+              d="M100,100 Q300,200 500,100 T900,150"
+              stroke="hsl(var(--primary))"
+              strokeWidth="1"
+              fill="none"
+              opacity="0.1"
+              initial={{ pathLength: 0 }}
+              animate={{ pathLength: 1 }}
+              transition={{
+                duration: 3,
+                repeat: Infinity,
+                repeatType: "reverse",
+              }}
+            />
+            <motion.path
+              d="M200,300 Q400,400 600,300 T1000,350"
+              stroke="hsl(var(--accent))"
+              strokeWidth="1"
+              fill="none"
+              opacity="0.1"
+              initial={{ pathLength: 0 }}
+              animate={{ pathLength: 1 }}
+              transition={{
+                duration: 4,
+                repeat: Infinity,
+                repeatType: "reverse",
+                delay: 1,
+              }}
+            />
+          </svg>
+        </motion.div>
+      </div>
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

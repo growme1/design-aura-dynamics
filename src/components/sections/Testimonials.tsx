@@ -63,6 +63,7 @@ export function Testimonials() {
           animate={{
             scale: [1, 1.1, 1],
             opacity: [0.3, 0.5, 0.3],
+            rotate: [0, 90, 180],
           }}
           transition={{
             duration: 8,
@@ -75,11 +76,49 @@ export function Testimonials() {
           animate={{
             scale: [1.1, 1, 1.1],
             opacity: [0.2, 0.4, 0.2],
+            rotate: [180, 90, 0],
           }}
           transition={{
             duration: 10,
             repeat: Infinity,
             repeatType: "reverse",
+          }}
+        />
+        
+        {/* Star field animation */}
+        <div className="absolute inset-0">
+          {[...Array(15)].map((_, i) => (
+            <motion.div
+              key={i}
+              className="absolute w-0.5 h-0.5 bg-primary/30 rounded-full"
+              style={{
+                left: `${Math.random() * 100}%`,
+                top: `${Math.random() * 100}%`,
+              }}
+              animate={{
+                opacity: [0, 1, 0],
+                scale: [0, 1, 0],
+              }}
+              transition={{
+                duration: 2 + Math.random() * 3,
+                repeat: Infinity,
+                delay: Math.random() * 3,
+              }}
+            />
+          ))}
+        </div>
+        
+        {/* Gradient waves */}
+        <motion.div
+          className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/5 to-transparent"
+          animate={{
+            x: ['-100%', '100%'],
+            opacity: [0, 0.5, 0],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            ease: "linear",
           }}
         />
       </div>

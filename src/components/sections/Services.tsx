@@ -47,6 +47,65 @@ export function Services() {
       {/* Background Elements */}
       <div className="absolute inset-0 bg-gradient-to-b from-background to-muted/20" />
       
+      {/* Animated Background Particles */}
+      <div className="absolute inset-0 overflow-hidden">
+        <motion.div
+          className="absolute top-10 left-10 w-40 h-40 bg-primary/5 rounded-full blur-2xl"
+          animate={{
+            scale: [1, 1.3, 1],
+            opacity: [0.2, 0.4, 0.2],
+            x: [0, 100, 0],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
+        <motion.div
+          className="absolute bottom-20 right-20 w-60 h-60 bg-accent/5 rounded-full blur-3xl"
+          animate={{
+            scale: [1.2, 0.8, 1.2],
+            opacity: [0.1, 0.3, 0.1],
+            x: [0, -80, 0],
+            y: [0, -60, 0],
+          }}
+          transition={{
+            duration: 25,
+            repeat: Infinity,
+            ease: "linear",
+          }}
+        />
+        
+        {/* Floating geometric shapes */}
+        <motion.div
+          className="absolute top-1/2 left-1/2 w-8 h-8 border border-primary/10 rotate-45"
+          animate={{
+            y: [0, -200, 0],
+            rotate: [45, 225, 45],
+            opacity: [0, 0.5, 0],
+          }}
+          transition={{
+            duration: 8,
+            repeat: Infinity,
+            delay: 1,
+          }}
+        />
+        <motion.div
+          className="absolute top-1/3 right-1/4 w-6 h-6 bg-accent/10 rounded-full"
+          animate={{
+            y: [0, -150, 0],
+            x: [0, 50, 0],
+            opacity: [0, 0.6, 0],
+          }}
+          transition={{
+            duration: 6,
+            repeat: Infinity,
+            delay: 2,
+          }}
+        />
+      </div>
+      
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <motion.div
